@@ -15,6 +15,15 @@ namespace Dsw2026Ej8
             Console.WriteLine("--Prueba Ej02--");
             Console.WriteLine(resumen);
 
+            Problema4 p4 = new Problema4();
+            Console.WriteLine("--Prueba Ej04--");
+            double promedio = p4.CalcularPromedio(7, 8, null);
+            Console.WriteLine($"prueba 1 ( 7, 8, null): {promedio}");
+             promedio = p4.CalcularPromedio(null, null, null);
+            Console.WriteLine($"prueba 2 (null, null, null): {promedio}");
+             promedio = p4.CalcularPromedio(10, 9, 8);
+            Console.WriteLine($"prueba 3 (10, 9, 8): {promedio}");
+
         }
     }
 }
