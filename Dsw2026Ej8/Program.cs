@@ -1,4 +1,5 @@
 ﻿using Dsw2026Ej8.Problema1;
+using Dsw2026Ej8.Problema_5;
 namespace Dsw2026Ej8
 {
     internal class Program
@@ -19,11 +20,25 @@ namespace Dsw2026Ej8
             Console.WriteLine("--Prueba Ej04--");
             double promedio = p4.CalcularPromedio(7, 8, null);
             Console.WriteLine($"prueba 1 ( 7, 8, null): {promedio}");
-             promedio = p4.CalcularPromedio(null, null, null);
+            promedio = p4.CalcularPromedio(null, null, null);
             Console.WriteLine($"prueba 2 (null, null, null): {promedio}");
-             promedio = p4.CalcularPromedio(10, 9, 8);
+            promedio = p4.CalcularPromedio(10, 9, 8);
             Console.WriteLine($"prueba 3 (10, 9, 8): {promedio}");
+
+            Problema5 p5 = new Problema5();
+            Console.WriteLine("--Prueba Ej05--");
+            Sale ventaMinorista = new RetailSale();
+            ventaMinorista.SetImporte(100m);
+            decimal importeFinal = p5.ObtenerImporteFinal(ventaMinorista);
+            Console.WriteLine($"Importe final para venta minorista (Importe 100) : {importeFinal}");
+
+
+            Sale ventaMayorista = new WholesaleSale();
+            ventaMayorista.SetImporte(100m);
+            decimal importeFinalMayorista = p5.ObtenerImporteFinal(ventaMayorista);
+            Console.WriteLine($"Importe final para venta mayorista (Importe 100) : {importeFinalMayorista}");
+        }
+
 
         }
     }
-}
