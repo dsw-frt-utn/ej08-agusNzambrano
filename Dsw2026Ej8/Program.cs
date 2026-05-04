@@ -1,10 +1,55 @@
-﻿namespace Dsw2026Ej8
+﻿using Dsw2026Ej8.Problema1;
+using Dsw2026Ej8.Problema_5;
+using Dsw2026Ej8.Problema_6;
+namespace Dsw2026Ej8
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            var productHelper = new ProductHelper();
+            string etiqueta = productHelper.ObtenerEtiquetaProducto(12345, "Camiseta", 19.99m);
+            Console.WriteLine("--Prueba Ej01--");
+            Console.WriteLine(etiqueta);
+
+            var p2 = new Dsw2026Ej8.Problema2();
+            string resumen = p2.CrearResumenVenta(12345, "Camiseta", 2, 19.99m);
+            Console.WriteLine("--Prueba Ej02--");
+            Console.WriteLine(resumen);
+
+            Problema4 p4 = new Problema4();
+            Console.WriteLine("--Prueba Ej04--");
+            double promedio = p4.CalcularPromedio(7, 8, null);
+            Console.WriteLine($"prueba 1 ( 7, 8, null): {promedio}");
+            promedio = p4.CalcularPromedio(null, null, null);
+            Console.WriteLine($"prueba 2 (null, null, null): {promedio}");
+            promedio = p4.CalcularPromedio(10, 9, 8);
+            Console.WriteLine($"prueba 3 (10, 9, 8): {promedio}");
+
+            Problema5 p5 = new Problema5();
+            Console.WriteLine("--Prueba Ej05--");
+            Sale ventaMinorista = new RetailSale();
+            ventaMinorista.SetImporte(100m);
+            decimal importeFinal = p5.ObtenerImporteFinal(ventaMinorista);
+            Console.WriteLine($"Importe final para venta minorista (Importe 100) : {importeFinal}");
+
+
+            Sale ventaMayorista = new WholesaleSale();
+            ventaMayorista.SetImporte(100m);
+            decimal importeFinalMayorista = p5.ObtenerImporteFinal(ventaMayorista);
+            Console.WriteLine($"Importe final para venta mayorista (Importe 100) : {importeFinalMayorista}");
+
+
+            Console.WriteLine("--Prueba Ej06--");
+            Problema6 p6 = new Problema6();
+            string ejemplo = "  ab 123 x   ";
+            string resultado = p6.NormalizarCodigoProducto(ejemplo);
+            string casoNull = p6.NormalizarCodigoProducto(null);
+
+            Console.WriteLine($"Original: '{ejemplo}' -> Normalizado: '{resultado}'");
+            Console.WriteLine($"Caso Null -> Resultado: {casoNull}");
+        }
+
+
         }
     }
-}
