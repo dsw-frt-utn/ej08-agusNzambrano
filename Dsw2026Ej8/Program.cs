@@ -1,5 +1,6 @@
 ﻿using Dsw2026Ej8.Problema1;
 using Dsw2026Ej8.Problema_5;
+using Dsw2026Ej8.Problema_6;
 namespace Dsw2026Ej8
 {
     internal class Program
@@ -37,6 +38,16 @@ namespace Dsw2026Ej8
             ventaMayorista.SetImporte(100m);
             decimal importeFinalMayorista = p5.ObtenerImporteFinal(ventaMayorista);
             Console.WriteLine($"Importe final para venta mayorista (Importe 100) : {importeFinalMayorista}");
+
+
+            Console.WriteLine("--Prueba Ej06--");
+            Problema6 p6 = new Problema6();
+            string ejemplo = "  ab 123 x   ";
+            string resultado = p6.NormalizarCodigoProducto(ejemplo);
+            string casoNull = p6.NormalizarCodigoProducto(null);
+
+            Console.WriteLine($"Original: '{ejemplo}' -> Normalizado: '{resultado}'");
+            Console.WriteLine($"Caso Null -> Resultado: {casoNull}");
         }
 
 
